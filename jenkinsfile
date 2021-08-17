@@ -3,7 +3,7 @@ def dockerimg
 pipeline {
  agent any
  tools {
-   maven 'Maven'
+   maven 'maven'
  }
  stages{
   stage("Version"){
@@ -14,14 +14,7 @@ pipeline {
     }
    }
   }
-  stage("build"){
-   steps {
-    script{
-      
-    }
-    
-   }
-  }
+  
   stage("Local Archive"){
    steps {
     archive '/var/lib/jenkins/jobs/Declarativetask*.war'
@@ -29,7 +22,7 @@ pipeline {
     }
     
    }
-   stage('build docker image') {
+  stage('build docker image') {
       steps {
         script {
 		 
