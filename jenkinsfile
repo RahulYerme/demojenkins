@@ -1,9 +1,31 @@
 pipeline {
- agent any 
+ agent any
+ tools {
+   maven 'maven'
+ }
  stages{
+  stage("Version"){
+   steps{
+    script{
+     va_r = "${BRANCH_NAME} -${BUILD_NUMBER}"
+     echo "${va_r}"
+    }
+   }
+  }
   stage("build"){
    steps {
-    echo "Building the java application..."
+    script{
+      
+    }
+    
+   }
+  }
+  stage("Local Archive"){
+   steps {
+    archive 
+      
+    }
+    
    }
   }
   stage("Deploy the application..."){
