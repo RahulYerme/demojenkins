@@ -3,7 +3,7 @@ def dockerimg
 pipeline {
  agent any
  tools {
-   maven 'maven'
+     maven "maven 3.8.2"
  }
  stages{
   stage("Version"){
@@ -14,6 +14,14 @@ pipeline {
     }
    }
   }
+  stage('build ') {
+      steps {
+        script {
+	
+	  sh "mvn clean package"	 
+        }
+      }
+   }
   
   stage("Local Archive"){
    steps {
