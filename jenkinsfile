@@ -19,7 +19,7 @@ pipeline {
       steps {
         script {
 	
-	  sh "mvn -s settings.xml -Drevision=$ va_r clean package"	 
+	  sh "mvn -s settings.xml -Drevision=$va_r clean package"	 
         }
       }
    }
