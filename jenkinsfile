@@ -10,8 +10,8 @@ pipeline {
   stage("Version"){
    steps{
     script{
-     va_r = "${BRANCH_NAME} -${BUILD_NUMBER}"
-     echo "${va_r}"
+         va_r  = "${BRANCH_NAME}-${BUILD_NUMBER}"
+         echo "${va_r}"
     }
    }
   }
@@ -19,7 +19,7 @@ pipeline {
       steps {
         script {
 	
-	  sh "mvn clean package"	 
+	  sh "mvn -s settings.xml -Drevision=$ va_r clean package"	 
         }
       }
    }
