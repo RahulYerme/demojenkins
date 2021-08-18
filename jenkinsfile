@@ -2,8 +2,8 @@ def va_r
 def dockerimg
 pipeline {
     agent any
-    tools {
-        maven "Maven3"
+    environment{
+     PATH = /usr/share/maven/bin:$PATH
     }
  stages{
   stage("Version"){
