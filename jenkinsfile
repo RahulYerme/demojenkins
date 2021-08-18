@@ -1,10 +1,10 @@
 def va_r
 def dockerimg
 pipeline {
- agent any
- tools {
-     maven "maven 3.8.2"
- }
+    agent any
+    tools {
+        maven "Maven3"
+    }
  stages{
   stage("Version"){
    steps{
